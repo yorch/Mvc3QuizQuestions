@@ -1,4 +1,4 @@
-@model Mvc3QuizQuestions.Models.LogOnModel
+﻿@model $rootnamespace$.Models.LogOnModel
 @{
     ViewBag.Title = "Log On";
 }

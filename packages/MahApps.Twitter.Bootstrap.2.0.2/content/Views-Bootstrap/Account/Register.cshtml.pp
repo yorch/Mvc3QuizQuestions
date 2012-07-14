@@ -1,4 +1,4 @@
-@model Mvc3QuizQuestions.Models.RegisterModel
+﻿@model $rootnamespace$.Models.RegisterModel
 @{
     ViewBag.Title = "Register";
 }

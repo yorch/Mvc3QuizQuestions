@@ -1,4 +1,4 @@
-@model Mvc3QuizQuestions.Models.ChangePasswordModel
+﻿@model $rootnamespace$.Models.ChangePasswordModel
 @{
     ViewBag.Title = "Change Password";
 }
