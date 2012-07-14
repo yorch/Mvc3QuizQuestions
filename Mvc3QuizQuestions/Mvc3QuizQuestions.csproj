@@ -69,6 +69,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\QuestionAnswer.cs" />
+    <Compile Include="Models\QuestionChoice.cs" />
+    <Compile Include="Models\Quiz.cs" />
+    <Compile Include="Models\QuizAnswer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +189,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="CodeTemplates\AddView\CSHTML\Create.tt" />
     <None Include="CodeTemplates\AddView\CSHTML\Delete.tt" />
     <None Include="CodeTemplates\AddView\CSHTML\Details.tt" />

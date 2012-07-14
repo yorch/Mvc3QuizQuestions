@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Mvc3QuizQuestions.Controllers.AccountController">
+    <Position X="5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAgAAAAAAAAAAAAAABAAAEAAAAAAQAIAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.Controllers.HomeController">
+    <Position X="3" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.MvcApplication">
+    <Position X="1" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAIQAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.Models.ChangePasswordModel">
+    <Position X="3" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.Models.LogOnModel">
+    <Position X="1" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQAAAAAgAAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.Models.RegisterModel">
+    <Position X="5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAQAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.Models.BaseEntity">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.Models.Question">
+    <Position X="2.75" Y="2.25" Width="1.5" />
+    <AssociationLine Name="Quiz" Type="Mvc3QuizQuestions.Models.Quiz">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.152" Y="-0.055" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAgAAEAABAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Models\Question.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Quiz" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.Models.QuestionAnswer">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <AssociationLine Name="QuizAnswer" Type="Mvc3QuizQuestions.Models.QuizAnswer">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.308" Y="-0.086" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Question" Type="Mvc3QuizQuestions.Models.Question">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.329" Y="-0.377" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Answer" Type="Mvc3QuizQuestions.Models.QuestionChoice">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.039" Y="-0.859" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAEAAAAAgAAAAA=</HashCode>
+      <FileName>Models\QuestionAnswer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="QuizAnswer" />
+      <Property Name="Question" />
+      <Property Name="Answer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.Models.QuestionChoice">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <AssociationLine Name="Question" Type="Mvc3QuizQuestions.Models.Question">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.777" Y="-0.065" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Models\QuestionChoice.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Question" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.Models.Quiz">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Quiz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mvc3QuizQuestions.Models.QuizAnswer">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <AssociationLine Name="Quiz" Type="Mvc3QuizQuestions.Models.Quiz">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.255" Y="0.518" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAgAAABAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Models\QuizAnswer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Quiz" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
