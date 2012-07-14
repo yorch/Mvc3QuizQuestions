@@ -1,16 +1,23 @@
-﻿<div class="pull-right">
-    @if (Request.IsAuthenticated)
+﻿@if (Request.IsAuthenticated)
+{
+    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon-user"></i> @User.Identity.Name
+        <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+        <!--<li><a href="#">Profile</a></li>
+        <li class="divider"></li>-->
+        <li>@Html.ActionLink("Log Off", "LogOff", "Account")</li>
+    </ul>
+
+}
+else
+{
+    using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { @class = "nomargin" }))
     {
-        <text>Welcome <strong>@User.Identity.Name</strong>! [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+    <input class="input-small" type="text" name="UserName" placeholder="Username" />
+    <input class="input-small" type="password" name="Password" placeholder="Password" />
+    <input name="RememberMe" value="true" type="hidden" />
+    <button class="btn" type="submit">Sign in</button>
     }
-    else
-    {
-        using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { @class="nomargin" }))
-        {
-        <input class="input-small" type="text" name="UserName" placeholder="Username" />
-        <input class="input-small" type="password" name="Password" placeholder="Password" />
-        <input name="RememberMe" value="true" type="hidden" />
-        <button class="btn" type="submit">Sign in</button>
-        }
-    }
-</div>
+}
