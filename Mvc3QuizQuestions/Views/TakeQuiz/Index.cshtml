@@ -1,0 +1,35 @@
+﻿@using Mvc3QuizQuestions.Helpers
+@model Mvc3QuizQuestions.Models.Quiz
+@{
+    ViewBag.Title = "Taking Quiz";
+}
+<div class="page-header">
+    <h2>
+        Taking Quiz: @Model.Name</h2>
+</div>
+@using (Html.BeginFormWithClassName("well"))
+{
+    <div class="quiz">
+        @foreach (var question in Model.Questions)
+        {
+            <div class="question">
+                <h3 class="question-title">
+                    @question.Title
+                </h3>
+                <div class="question-choices controls">
+                    @foreach (var choice in question.Choices.OrderBy(c => Guid.NewGuid()))
+                    {
+                        <label class="checkbox">
+                            @Html.RadioButton("question-" + question.Id, @choice.Id)
+                            @choice.Title
+                        </label>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+    <div class="form-actions">
+        <input type="submit" class="btn btn-primary" value="Send" />
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn" })
+    </div>
+}
