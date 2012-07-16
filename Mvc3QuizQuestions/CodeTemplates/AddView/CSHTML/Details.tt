@@ -62,12 +62,10 @@ if (!String.IsNullOrEmpty(mvcHost.MasterPageFile)) {
 #>
         <fieldset>
             <legend><#= mvcHost.ViewDataType.Name #></legend>
-            <br />
 <#
 foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
     if (!property.IsPrimaryKey) {
 #>
-
             <div class="row">
                 <div class="span2">@Html.LabelFor(model => model.<#= property.Name #>)</div>
                 <div class="span10">@Html.DisplayFor(model => model.<#= property.Name #>)</div>
