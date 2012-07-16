@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Mvc3QuizQuestions.Models.Question>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="page-header">
+    <h2>
+        Index</h2>
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                HelpText
+            </th>
+            <th>
+                Order
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-mini btn-info" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-mini btn-info" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-mini btn-danger" })
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.HelpText
+                </td>
+                <td>
+                    @item.Order
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
