@@ -36,7 +36,7 @@ if (!String.IsNullOrEmpty(mvcHost.MasterPageFile)) {
 }
 
 <div class="page-header">
-	<h2><#= mvcHost.ViewName#></h2>
+    <h2><#= mvcHost.ViewName#></h2>
 </div>
 <#
 } else {
@@ -53,71 +53,71 @@ if (!String.IsNullOrEmpty(mvcHost.MasterPageFile)) {
     <title><#= mvcHost.ViewName #></title>
 </head>
 <body>
-	<div class="page-header">
-	</div>
+    <div class="page-header">
+    </div>
 <#
     PushIndent("    ");
 }
 #>
-		<p>
-			@Html.ActionLink("Create New", "Create")
-		</p>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th></th>
+        <p>
+            @Html.ActionLink("Create New", "Create", null, new { @class  = "btn btn-primary" })
+        </p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th></th>
 <#
 List<ModelProperty> properties = GetModelProperties(mvcHost.ViewDataType);
 foreach (ModelProperty property in properties) {
     if (!property.IsPrimaryKey) {
 #>
-					<th>
-						<#= property.Name #>
-					</th>
+                    <th>
+                        <#= property.Name #>
+                    </th>
 <#
     }
 }
 #>
-				</tr>
-			</thead>
-			<tbody>
+                </tr>
+            </thead>
+            <tbody>
 
 @foreach (var item in Model) {
-				<tr>
+                <tr>
 <#
 string pkName = GetPrimaryKeyName(mvcHost.ViewDataType);
 if (pkName != null) {
 #>
-					<td>
-						@Html.ActionLink("Edit", "Edit", new { id=item.<#= pkName #> }) |
-						@Html.ActionLink("Details", "Details", new { id=item.<#= pkName #> }) |
-						@Html.ActionLink("Delete", "Delete", new { id=item.<#= pkName #> })
-					</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.<#= pkName #> }, new { @class = "btn btn-mini btn-info" })
+                        @Html.ActionLink("Details", "Details", new { id=item.<#= pkName #> }, new { @class = "btn btn-mini btn-info" })
+                        @Html.ActionLink("Delete", "Delete", new { id=item.<#= pkName #> }, new { @class = "btn btn-mini btn-danger" })
+                    </td>
 <#
 } else {
 #>
-					<td>
-						@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-						@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-						@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-					</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-mini btn-info" })
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-mini btn-info" })
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-mini btn-danger" })
+                    </td>
 <#
 }
     
 foreach (ModelProperty property in properties) {
     if (!property.IsPrimaryKey) {
 #>
-					<td>
-						@<#= property.ValueExpression.Replace("Model.", "item.") #>
-					</td>
+                    <td>
+                        @<#= property.ValueExpression.Replace("Model.", "item.") #>
+                    </td>
 <#
     }
 }
 #>
-			</tr>
+            </tr>
 }
-		</tbody>
-	</table>
+        </tbody>
+    </table>
 <#
 // The following code closes the asp:Content tag used in the case of a master page and the body and html tags in the case of a regular view page
 #>
