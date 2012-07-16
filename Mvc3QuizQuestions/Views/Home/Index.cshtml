@@ -2,9 +2,22 @@
     ViewBag.Title = "Home Page";
 }
 <div class="page-header">
-    <h2>@ViewBag.Message</h2>
+    <h2>
+        Welcome to Quiz Questions!</h2>
 </div>
-<p>
-    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">
-        http://asp.net/mvc</a>.
-</p>
+@if (ViewBag.QuizList.Count > 0)
+{
+    <p>
+        The following Quizzes are available.</p>
+    <ul>
+        @foreach (var quiz in ViewBag.QuizList)
+        {
+            <li><a href="@Url.Action("Index", "TakeQuiz", new { id = quiz.Id})">@quiz.Name</a></li>
+        }
+    </ul>
+}
+else
+{
+    <p>
+        There are no quizzes available.</p>
+}
