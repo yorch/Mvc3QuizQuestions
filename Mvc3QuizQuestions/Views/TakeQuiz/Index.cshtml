@@ -7,8 +7,10 @@
     <h2>
         Taking Quiz: @Model.Name</h2>
 </div>
+<script src="@Url.Content("~/Scripts/take-quiz.js")" type="text/javascript"></script>
 @using (Html.BeginFormWithClassName("well"))
 {
+    @Html.Hidden("quizId", Model.Id)
     <div class="quiz">
         @foreach (var question in Model.Questions)
         {
