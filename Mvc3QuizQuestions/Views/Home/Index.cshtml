@@ -1,23 +1,20 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Welcome to Quiz Questions";
 }
 <div class="page-header">
-    <h2>
-        Welcome to Quiz Questions!</h2>
+    <h2>@ViewBag.Title</h2>
 </div>
 @if (ViewBag.QuizList.Count > 0)
 {
-    <p>
-        The following Quizzes are available.</p>
+    <p>The following Quizzes are available.</p>
     <ul>
         @foreach (var quiz in ViewBag.QuizList)
         {
-            <li><a href="@Url.Action("Index", "TakeQuiz", new { id = quiz.Id})">@quiz.Name</a></li>
+            <li><a href="@Url.Action("Index", "TakeQuiz", new { id = quiz.Id })">@quiz.Name</a></li>
         }
     </ul>
 }
 else
 {
-    <p>
-        There are no quizzes available.</p>
+    <p>There are no quizzes available.</p>
 }
