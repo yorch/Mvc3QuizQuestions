@@ -21,8 +21,8 @@ namespace Mvc3QuizQuestions.DataAccess
         //public DbSet<Quiz> Quizzes { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<QuestionChoice> QuestionChoices { get; set; }
-        public DbSet<QuizAnswer> QuizAnswers { get; set; }
-        public DbSet<QuestionAnswer> QuestionAnswers { get; set; }
+        public DbSet<AnswerQuiz> AnswerQuizs { get; set; }
+        public DbSet<AnswerQuestion> AnswerQuestions { get; set; }
 
         public override int SaveChanges()
         {
