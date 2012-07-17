@@ -11,5 +11,6 @@ namespace Mvc3QuizQuestions.Models
         public string User { get; set; }
         public DateTime AnsweredOn { get; set; }
         public int Score { get; set; }
+        public ICollection<QuestionAnswer> Questions { get; set; }
     }
 }
