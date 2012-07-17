@@ -1,11 +1,11 @@
 ﻿@using Mvc3QuizQuestions.Helpers
 @model Mvc3QuizQuestions.Models.Question
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Question";
 }
 <div class="page-header">
     <h2>
-        Create</h2>
+        @ViewBag.Title</h2>
 </div>
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="control-group">
-            @Html.LabelFor(model => model.HelpText)
+            @Html.LabelFor(model => model.HelpText, )
             <div class="controls">
                 @Html.EditorFor(model => model.HelpText)
                 @Html.ValidationMessageFor(model => model.HelpText)

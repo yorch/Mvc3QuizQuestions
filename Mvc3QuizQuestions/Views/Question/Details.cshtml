@@ -1,10 +1,10 @@
 ﻿@model Mvc3QuizQuestions.Models.Question
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Question Details";
 }
 <div class="page-header">
     <h2>
-        Details</h2>
+        @ViewBag.Title</h2>
 </div>
 <fieldset>
     <legend>Question</legend>
@@ -19,6 +19,14 @@
     <div class="row">
         <div class="span2">@Html.LabelFor(model => model.Order)</div>
         <div class="span10">@Html.DisplayFor(model => model.Order)</div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.CreatedOn)</div>
+        <div class="span10">@Html.DisplayFor(model => model.CreatedOn)</div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.UpdatedOn)</div>
+        <div class="span10">@Html.DisplayFor(model => model.UpdatedOn)</div>
     </div>
 </fieldset>
 <div>
