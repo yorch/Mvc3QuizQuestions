@@ -1,0 +1,31 @@
+﻿@model Mvc3QuizQuestions.Models.QuestionChoice
+@{
+    ViewBag.Title = "Choice Details";
+}
+<div class="page-header">
+    <h2>
+        @ViewBag.Title</h2>
+</div>
+<fieldset>
+    <legend>Choice</legend>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.Title)</div>
+        <div class="span10">@Html.DisplayFor(model => model.Title)</div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.IsCorrect)</div>
+        <div class="span10">@Html.DisplayFor(model => model.IsCorrect)</div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.CreatedOn)</div>
+        <div class="span10">@Html.DisplayFor(model => model.CreatedOn)</div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.UpdatedOn)</div>
+        <div class="span10">@Html.DisplayFor(model => model.UpdatedOn)</div>
+    </div>
+</fieldset>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn" })
+</div>
