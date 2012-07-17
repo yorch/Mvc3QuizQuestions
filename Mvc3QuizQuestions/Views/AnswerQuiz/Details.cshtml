@@ -1,0 +1,34 @@
+﻿@model Mvc3QuizQuestions.Models.AnswerQuiz
+@{
+    ViewBag.Title = "Details";
+}
+<div class="page-header">
+    <h2>@ViewBag.Title</h2>
+</div>
+<fieldset>
+    <legend>AnswerQuiz</legend>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.User)</div>
+        <div class="span10">@Html.DisplayFor(model => model.User)</div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.AnsweredOn)</div>
+        <div class="span10">@Html.DisplayFor(model => model.AnsweredOn)</div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.Score)</div>
+        <div class="span10">@Html.DisplayFor(model => model.Score)</div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.CreatedOn)</div>
+        <div class="span10">@Html.DisplayFor(model => model.CreatedOn)</div>
+    </div>
+    <div class="row">
+        <div class="span2">@Html.LabelFor(model => model.UpdatedOn)</div>
+        <div class="span10">@Html.DisplayFor(model => model.UpdatedOn)</div>
+    </div>
+</fieldset>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn" })
+</div>
