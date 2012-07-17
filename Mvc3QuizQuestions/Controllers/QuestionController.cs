@@ -14,9 +14,8 @@ namespace Mvc3QuizQuestions.Controllers
         //
         // GET: /Question/
 
-        public ViewResult Index(int quizId)
+        public ViewResult Index()
         {
-            db.Quizs.Find(quizId);
             return View(db.Questions.ToList());
         }
 
