@@ -1,0 +1,25 @@
+﻿@model Mvc3QuizQuestions.Models.AnswerQuiz
+@{
+    ViewBag.Title = "Result";
+}
+<div class="page-header">
+    <h2>@ViewBag.Title</h2>
+</div>
+<div class="well">
+    @if (Model.IncorrectQuestions.Count > 0)
+    {
+        <p>The following answers were wrong:</p>
+        <ul>
+        @foreach (var question in Model.IncorrectQuestions)
+        {
+            <li>@question.Title</li>
+        }
+        </ul>
+    }
+    else
+    {
+        <p>Perfect! All your answers were correct!</p>
+    }
+    <p><strong>Your score is @Model.Score</strong></p>
+    <p>@Html.ActionLink("See Top Scores", "TopScores", "Home", null, new { @class = "btn" })</p>
+</div>
