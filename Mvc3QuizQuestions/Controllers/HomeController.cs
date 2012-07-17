@@ -29,12 +29,6 @@ namespace Mvc3QuizQuestions.Controllers
                 .Take(numberOfScores);
 
             return View(viewModel);
-            /*var viewModel = from a in db.AnswerQuizs
-                            orderby a.Score descending
-                            select a;*/
-            /*return View(viewModel
-                .Select(a => a.Questions.Select(q => q.Answer))
-                .Take(numberOfScores));*/
         }
     }
 }

@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Mvc3QuizQuestions.Models;
-using Mvc3QuizQuestions.ViewModels;
 
 namespace Mvc3QuizQuestions.Controllers
 {
